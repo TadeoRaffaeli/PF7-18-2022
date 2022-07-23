@@ -292,6 +292,30 @@ footer{
 .col3h{
     grid-area: col3h;
 }
+.parrafo1a{
+    grid-area: parrafo1a;
+}
+.parrafo2a{
+    grid-area: parrafo2a;
+}
+.parrafo3a{
+    grid-area: parrafo3a;
+}
+.parrafo3a{
+    grid-area: parrafo3a;
+}
+.introa{
+    grid-area: introa;
+}
+.video1a{
+    grid-area: video1a;
+}
+.instituto{
+    grid-area: instituto;
+}
+.tsup{
+    grid-area: tsup;
+}
 @media (min-width:600px){
      header{
         text-shadow: 5%;
@@ -402,5 +426,28 @@ footer{
         "linea1 linea1 linea1"
         "p1 p2 p3";
         align-items: stretch;
-    }   
+    }  
+     .parrafo1a{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "primero primero"
+        "p p"
+        ;
+        align-items: stretch;
+     }
+     .parrafo3a{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "tsup tsup tsup"
+        "introa introa introa"
+        "p p p"
+        "video1a video1a video1a"
+        "instituto instituto instituto"
+        ;
+        align-items: stretch;
+     }
 }
