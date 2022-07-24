@@ -138,6 +138,10 @@ footer{
     justify-content: center;
     margin: 1% 4% 2% 4%;
 }
+.redes:hover{
+    transform: scale(1.25);
+    transition: 2.5s;
+}
 
 .arturito{
     color: antiquewhite;
