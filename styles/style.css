@@ -26,11 +26,20 @@ header{
     background-image: linear-gradient(to right,rgb(70, 36, 76), rgb(113, 43, 117),rgb(199, 75, 80),rgb(212, 155, 84)); 
     color: rgb(85, 82, 147);   
 }
-
+.offcanvas, .offcanvas-end{
+    background-color:rgb(242, 242, 242);
+}
+.hindex{
+    display: none;
+}
+.dropdown-menue{
+    display: grid;
+}
 main{
     width: 100%;
     align-content: center;
     text-align: center;
+    margin-top: 4%;
 }
 
 ul li{
@@ -320,16 +329,31 @@ footer{
 .tsup{
     grid-area: tsup;
 }
-@media (min-width:600px){
+.hindex{
+    grid-area: hindex;
+}
+@media (min-width:709px){
      header{
         text-shadow: 5%;
         justify-content: space-around;
-        text-align: center;
+        text-align: left;
+        font: 80px;
+     }
+     .hindex{
+        display: grid;
+        margin-left: none;
+        grid-template-areas: 
+        "div div div div div";
+        font: 80px;
+     }
+     .headerMob{
+        display: none;
      }
 
      main{
         width: 80%;
         margin-left: 10%;
+        margin-top: none;
      }
      img{
         width: 100%;
@@ -359,10 +383,7 @@ footer{
      }
 }
 @media (min-width:1024px){
-    header{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
+    
     img{
         width: 80%
     }
@@ -453,5 +474,9 @@ footer{
         "instituto instituto instituto"
         ;
         align-items: stretch;
+     }
+     .contacto{
+        margin-left: 20%;
+        margin-right: 20%;
      }
 }
