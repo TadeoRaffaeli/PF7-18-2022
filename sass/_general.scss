@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+$letra:16px;
+$espacio:1.5px;
+$color: rgb(241, 216, 153);
+$colorTitulo: goldenrod;
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;   
+    background-image: linear-gradient(to right,rgb(54, 34, 34),rgb(23, 16, 16),rgb(66, 63, 62),rgb(43, 43, 43));
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    grid-area: header;
+    padding: 20px;
+    text-align: left;
+    word-spacing: 15px;
+    font-size: 25px;
+    background-image: linear-gradient(to right,rgb(70, 36, 76), rgb(113, 43, 117),rgb(199, 75, 80),rgb(212, 155, 84)); 
+    color: rgb(85, 82, 147);
+}
+.offcanvas, .offcanvas-end{
+    background-color:rgb(242, 242, 242);
+}
+.hindex{
+    display: none;
+}
+.dropdown-menue{
+    display: grid;
+}
+main{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    margin-top: 4%;
+}
+ul{
+    list-style-type: none;
+    li{
+       display: inline-block; 
+    } 
+}
+h1{
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    padding: 20px;
+    border: 10px solid;
+    color: $colorTitulo;
+}
+p, a, li{
+    font-size: $color;
+    text-align: justify;
+    line-height: 1.6;
+    letter-spacing: $espacio;
+    word-spacing: 2px; 
+    color: $color;
+    padding: 1em;
+    margin: 6px 0px 6px 0px;
+    text-decoration: none;
+}
+img{
+    width: 80%;
+    height: 50%;
+    border-image: round;
+    border: 5px solid gray;
+    align-content: center;
+}
+
+iframe{
+    border: 5px solid gray;
+    width: 70%;
+    height: 50vh;
+}
+.ultimo{
+    margin-bottom: 100px;
+    color:rgb(241, 216, 153);
+    font-style: italic;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(51, 54, 162);
+    color: white;
+    width: 100%;
+    grid-area: footer;
+}
+
+.icon{
+    width: 85%;
+    height: 85%;
+    border: 0cm;
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1% 4% 2% 4%;
+    &:hover{
+        transform: scale(1.25);
+    transition: 2.5s;
+    }
+}
+.arturito{
+    color: antiquewhite;
+    text-align: left;
+}
+.Nombre{
+    text-align: end;
+    color: antiquewhite;
+    font-style: oblique;
+ }
+ .flex1{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

@@ -1,0 +1,158 @@
+@import "general";
+@import "hipertrofia";
+@import "powerlifting";
+@import "alimentacion";
+@import "contacto";
+@import "index";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+@media (min-width:709px){
+     header{
+        text-shadow: 5%;
+        justify-content: space-around;
+        text-align: left;
+        font: 80px;
+     }
+     .hindex{
+        display: grid;
+        margin-left: none;
+        grid-template-areas: 
+        "div div div div div";
+        font: 80px;
+     }
+     .headerMob{
+        display: none;
+     }
+
+     main{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: none;
+     }
+     img{
+        width: 100%;
+     }
+     iframe{
+        width: 100%;
+     }
+     .icon{
+        width: 80%;
+        height: 80%;
+     }
+     .arturito{
+        font-size: 18px;
+     }
+     .Nombre{
+        font-size: 16px;
+        text-align: left;
+     }
+     p, a, li{
+        font-size: 19px;
+     }
+     h1{
+        font-size: 38px;
+     }
+     h3{
+        font-size: 33px;
+     }
+}
+@media (min-width:1024px){
+    
+    img{
+        width: 80%
+    }
+    iframe{
+        width: 80%
+    }
+    .parrafo1p{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "primero     primero"
+        "introp      introp"
+        "powertitulo powertitulo"
+        "col1        col2"
+        "col3        col3";
+        align-items: stretch;
+    }
+    .parrafo3p{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "fases fases fases"
+        "intro1 intro1 intro1"
+        "pa pb pc"
+        "lastvid lastvid lastvid"
+        "lastinfo lastinfo lastinfo";
+        align-items: stretch;
+    }
+    .parrafo1h{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "t1 t1"
+        "content1      content2"
+        "videoh videoh"
+        "link1 link2";
+        align-items: stretch;
+    }
+    .parrafo2h{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "t2 t2"
+        "col1h col2h"
+        "col3h col3h"
+        "video2h video2h";
+        align-items: stretch;
+    }
+    .colh2{
+        line-height: 2.4;
+        padding: 3em;
+        word-spacing: 4px;
+    }
+
+    .parrafo1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "principal2 principal2 principal2"
+        "linea1 linea1 linea1"
+        "p1 p2 p3";
+        align-items: stretch;
+    }  
+     .parrafo1a{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "primero primero"
+        "p p"
+        ;
+        align-items: stretch;
+     }
+     .parrafo3a{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "tsup tsup tsup"
+        "introa introa introa"
+        "p p p"
+        "video1a video1a video1a"
+        "instituto instituto instituto"
+        ;
+        align-items: stretch;
+     }
+     .contacto{
+        margin-left: 20%;
+        margin-right: 20%;
+     }
+}
