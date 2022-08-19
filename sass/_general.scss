@@ -7,6 +7,15 @@ $espacio:1.5px;
 $color: rgb(241, 216, 153);
 $colorTitulo: goldenrod;
 
+.generales{
+    font-size: $letra;
+    color: $color;
+    letter-spacing: $espacio;
+}
+@mixin sizes($width,$height){
+    height: $height;
+    width: $width;
+}
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 19px;
@@ -38,7 +47,7 @@ header{
     display: grid;
 }
 main{
-    width: 100%;
+    @include sizes (100%, 100%);
     align-content: center;
     text-align: center;
     margin-top: 4%;
@@ -59,19 +68,16 @@ h1{
     color: $colorTitulo;
 }
 p, a, li{
-    font-size: $color;
+    @extend .generales;
     text-align: justify;
     line-height: 1.6;
-    letter-spacing: $espacio;
     word-spacing: 2px; 
-    color: $color;
     padding: 1em;
     margin: 6px 0px 6px 0px;
     text-decoration: none;
 }
 img{
-    width: 80%;
-    height: 50%;
+    @include size (80%, 50%);
     border-image: round;
     border: 5px solid gray;
     align-content: center;
@@ -97,8 +103,7 @@ footer{
 }
 
 .icon{
-    width: 85%;
-    height: 85%;
+    @include size (85%, 85%);
     border: 0cm;
 }
 
@@ -113,6 +118,7 @@ footer{
     }
 }
 .arturito{
+    @extend .generales;
     color: antiquewhite;
     text-align: left;
 }
