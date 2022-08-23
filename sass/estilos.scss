@@ -9,12 +9,22 @@
 
 
 @media (min-width:709px){
-     header{
+   
+   header{
         text-shadow: 5%;
         justify-content: space-around;
         text-align: left;
         font: 80px;
      }
+   .padre{
+      margin-top: 0%;
+   }  
+   .parrafo1h{
+      margin-top: 0%;
+   }
+   .parrafo1a{
+      margin-top: 0%;
+   }
      .hindex{
         display: grid;
         margin-left: none;
@@ -38,7 +48,7 @@
         width: 100%;
      }
      .icon{
-        @include size (80%, 80%);
+        @include sizes (80%, 80%);
      }
      .arturito{
         font-size: 18px;
@@ -61,6 +71,11 @@
     
     img{
         width: 80%
+    }
+    .imgPres{
+      img{
+         @include sizes(100%, 100%);
+      }
     }
     iframe{
         width: 80%
@@ -111,6 +126,7 @@
         "video2h video2h";
         align-items: stretch;
     }
+    
     .colh2{
         line-height: 2.4;
         padding: 3em;
@@ -138,6 +154,19 @@
         ;
         align-items: stretch;
      }
+     .parrafo2a{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 
+      "titulo2a titulo2a"
+      "p1a p1a"
+      "p2a p2a"
+      "video2a video2a"
+      "p3a p3a"
+      "p4a p4a";
+      align-items: stretch;
+   }
      .parrafo3a{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -148,11 +177,64 @@
         "p p p"
         "video1a video1a video1a"
         "instituto instituto instituto"
-        ;
+        "linka linka linka";
         align-items: stretch;
      }
      .contacto{
         margin-left: 20%;
         margin-right: 20%;
      }
+}
+@media (min-width:1244px){
+   .parrafo2h{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 
+      "t2 t2"
+      "col1h col2h"
+      "video2h col3h"
+      "video2h col3h";
+      align-items: stretch;
+  }
+  .video2h{
+      height: 100%;
+      iframe{
+         margin-top: 10%;
+         height: 80%;
+      }
+    }
+    .parrafo2a{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 
+      "titulo2a titulo2a"
+      "p1a p1a"
+      "video2a p2a"
+      "p3a p3a"
+      "p4a p4a";
+      align-items: stretch;
+   }
+   .video2a{
+      height: 100%;
+      iframe{
+         margin-top: 10%;
+         height: 80%;
+      }
+    }
+    .parrafo3a{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 
+      "tsup tsup tsup"
+      "introa introa introa"
+      "p p p"
+      "video1a video1a video1a"
+      "instituto instituto instituto"
+      "linka linka linka"
+      ;
+      align-items: stretch;
+   }
 }

@@ -4,6 +4,12 @@
   margin: 0;
 }
 
+.generales, .arturito, p, a, li {
+  font-size: 16px;
+  color: rgb(240, 227, 195);
+  letter-spacing: 1.5px;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 19px;
@@ -11,7 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: linear-gradient(to right, rgb(54, 34, 34), rgb(23, 16, 16), rgb(66, 63, 62), rgb(43, 43, 43));
+  background-color: #260030;
 }
 
 header {
@@ -39,10 +45,11 @@ header {
 }
 
 main {
+  height: 100%;
   width: 100%;
   align-content: center;
   text-align: center;
-  margin-top: 4%;
+  margin-top: 0%;
 }
 
 ul {
@@ -58,25 +65,22 @@ h1 {
   font-size: 32px;
   text-align: center;
   padding: 20px;
-  border: 10px solid;
-  color: goldenrod;
+  border: 10px solid rgb(132, 130, 124);
+  color: whitesmoke;
 }
 
 p, a, li {
-  font-size: rgb(241, 216, 153);
   text-align: justify;
   line-height: 1.6;
-  letter-spacing: 1.5px;
   word-spacing: 2px;
-  color: rgb(241, 216, 153);
   padding: 1em;
   margin: 6px 0px 6px 0px;
   text-decoration: none;
 }
 
 img {
-  width: 80%;
   height: 50%;
+  width: 80%;
   -o-border-image: round;
      border-image: round;
   border: 5px solid gray;
@@ -93,20 +97,21 @@ iframe {
   margin-bottom: 100px;
   color: rgb(241, 216, 153);
   font-style: italic;
+  grid-area: ultimo;
 }
 
 footer {
   display: flex;
   flex-direction: column;
-  background-color: rgb(51, 54, 162);
+  background-color: rgb(61, 54, 61);
   color: white;
   width: 100%;
   grid-area: footer;
 }
 
 .icon {
-  width: 85%;
   height: 85%;
+  width: 85%;
   border: 0cm;
 }
 
@@ -180,10 +185,14 @@ footer {
 
 .col1h {
   grid-area: col1h;
+  border: 10px burlywood;
+  background-color: #34043f;
 }
 
 .col2h {
   grid-area: col2h;
+  border: 10px burlywood;
+  background-color: #34043f;
 }
 
 .col3h {
@@ -192,6 +201,10 @@ footer {
 
 .hindex {
   grid-area: hindex;
+}
+
+.parrafo1h {
+  margin-top: 4%;
 }
 
 .col2 {
@@ -254,6 +267,7 @@ footer {
 
 .padre {
   grid-area: padre;
+  margin-top: 4%;
 }
 
 .primero {
@@ -262,10 +276,12 @@ footer {
 
 .powertitulo {
   grid-area: powertitulo;
+  color: whitesmoke;
 }
 
 .parrafo1a {
   grid-area: parrafo1a;
+  margin-top: 4%;
 }
 
 .parrafo2a {
@@ -296,7 +312,35 @@ footer {
   grid-area: tsup;
 }
 
-h3 {
+.video2a {
+  grid-area: video2a;
+}
+
+.p1a {
+  grid-area: p1a;
+}
+
+.p2a {
+  grid-area: p2a;
+}
+
+.p3a {
+  grid-area: p3a;
+}
+
+.p4a {
+  grid-area: p4a;
+}
+
+.titulo2a {
+  grid-area: titulo2a;
+}
+
+.linka {
+  grid-area: linka;
+}
+
+h2 {
   font-style: normal;
   font-family: "Roboto", sans-serif;
   font-size: 28px;
@@ -332,9 +376,10 @@ input {
   color: aliceblue;
 }
 
-.principal2 {
+.ultimo1 {
+  margin-bottom: 100px;
+  color: black;
   font-style: italic;
-  font-weight: 900;
 }
 
 .parrafo1 {
@@ -369,12 +414,31 @@ input {
   grid-area: parrafo3;
 }
 
+.imgPres {
+  grid-area: imgPres;
+  height: 100%;
+  width: 100%;
+}
+.imgPres img {
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 709px) {
   header {
     text-shadow: 5%;
     justify-content: space-around;
     text-align: left;
     font: 80px;
+  }
+  .padre {
+    margin-top: 0%;
+  }
+  .parrafo1h {
+    margin-top: 0%;
+  }
+  .parrafo1a {
+    margin-top: 0%;
   }
   .hindex {
     display: grid;
@@ -397,8 +461,8 @@ input {
     width: 100%;
   }
   .icon {
-    width: 80%;
     height: 80%;
+    width: 80%;
   }
   .arturito {
     font-size: 18px;
@@ -420,6 +484,10 @@ input {
 @media (min-width: 1024px) {
   img {
     width: 80%;
+  }
+  .imgPres img {
+    height: 100%;
+    width: 100%;
   }
   iframe {
     width: 80%;
@@ -461,7 +529,7 @@ input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "principal2 principal2 principal2" "linea1 linea1 linea1" "p1 p2 p3";
+    grid-template-areas: "imgPres imgPres imgPres" "principal2 principal2 principal2" "linea1 linea1 linea1" "p1 p2 p3";
     align-items: stretch;
   }
   .parrafo1a {
@@ -471,15 +539,59 @@ input {
     grid-template-areas: "primero primero" "p p";
     align-items: stretch;
   }
+  .parrafo2a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "titulo2a titulo2a" "p1a p1a" "p2a p2a" "video2a video2a" "p3a p3a" "p4a p4a";
+    align-items: stretch;
+  }
   .parrafo3a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "tsup tsup tsup" "introa introa introa" "p p p" "video1a video1a video1a" "instituto instituto instituto";
+    grid-template-areas: "tsup tsup tsup" "introa introa introa" "p p p" "video1a video1a video1a" "instituto instituto instituto" "linka linka linka";
     align-items: stretch;
   }
   .contacto {
     margin-left: 20%;
     margin-right: 20%;
+  }
+}
+@media (min-width: 1244px) {
+  .parrafo2h {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "t2 t2" "col1h col2h" "video2h col3h" "video2h col3h";
+    align-items: stretch;
+  }
+  .video2h {
+    height: 100%;
+  }
+  .video2h iframe {
+    margin-top: 10%;
+    height: 80%;
+  }
+  .parrafo2a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "titulo2a titulo2a" "p1a p1a" "video2a p2a" "p3a p3a" "p4a p4a";
+    align-items: stretch;
+  }
+  .video2a {
+    height: 100%;
+  }
+  .video2a iframe {
+    margin-top: 10%;
+    height: 80%;
+  }
+  .parrafo3a {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "tsup tsup tsup" "introa introa introa" "p p p" "video1a video1a video1a" "instituto instituto instituto" "linka linka linka";
+    align-items: stretch;
   }
 }/*# sourceMappingURL=estilos.css.map */
