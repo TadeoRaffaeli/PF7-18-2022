@@ -1,106 +1,116 @@
-//Clase 1
-// Arancamos con JS//
-//variables
-
-let nombreProducto
-
-let year
-
-nombreProducto = "Mesa"
-
-year = 2022
-
-const altura = 1.79
-
-let numeroA = 5
-let numeroB = 10
-
-let resultado = numeroA + numeroB
-
-console.log("suma de la operación", resultado)
-
-let texto = "hola"
-let texto2 = "mundo"
-
-let texto3 = texto + " " + texto2
-
-console.log(texto3)
-
-let union = numeroA + texto
-console.log(union)
-
-let num1 = "5"
-let num2 = 3
-let num3 = num1 - num2
-console.log(num3)
 /*
-let numeroIngresado = prompt("ingrese un número:")
-console.log(numeroIngresado)
+let productoA = {
+    nombre: 'Mesa',
+    precio: 100,
+    stock: 10
+} */
 
-alert("Bienvenido")
-*/
+    function Producto(nombre, precio, stock){
+    this.nombre = nombre;
+    this.precio = precio;
+    this.stock = stock;
+    this.restarStock = function(cantidad){
+        this.stock -= cantidad
+    }
+} 
 
-//2 Productos -> Mostrar Prods -> Compra?
-//Qué cantidad? -> Mostrar precio total de la compra
+/* class Producto{
+    constructor(nombre, precio, stock){
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+    restarStock(cantidad){
+        this.stock -= cantidad
+    }
+}  */
 
-let nombreProductoA = 'Mesa'
-let precioProductoA = 100
+let productoA = new Producto('Proteina ENA 1KG', 5500, 150)
+let productoB = new Producto("Proteina Star 3kg", 15200, 60)
+let productoC = new Producto("Whey Protein Gentech 5kgs", 24000, 20)
+let productoD = new Producto("Creatina ENA 300Grs", 7200, 30)
+let productoE = new Producto("Creatina Star 300Grs", 10000, 20)
+let productoF = new Producto("Creatina Gold Nutrition 300Grs", 7000, 80)
 
-let nombreProductoB = 'Silla'
-let precioProductoB = 10
 
-let compra = prompt("Ingrese SI si quiere comprar: " + nombreProductoA + " y " + nombreProductoB)
+/* for(const propiedad in productoA){
+    console.log(productoA[propiedad])
+} */
 
-if(compra == "SI"){
-let cantidadProductoA = prompt("ingrese que cantidad de " + nombreProductoA + " desea comprar.")
-let cantidadProductoB = prompt("ingrese que cantidad de " + nombreProductoB + " desea comprar.")
+let precioTotal = 0
+ alert('Estos son nuestros prefuctos en stock: \n- 1.Proteina ENA 1KG\n- 2.Proteina Star 3kg\n- 3.Whey Protein Gentech 5kg\n- 4.Creatina ENA 300Grs\n- 5.Creatina Star 300Grs\n- 6.Creatina Gold Nutrition 300Grs"') 
 
-let precioTotalA = cantidadProductoA * precioProductoA
-let precioTotalB = cantidadProductoB * precioProductoB
 
-let precioTotal = precioTotalA + precioTotalB
-
-alert("El precio total es: " + precioTotal)
+function calculoPrecio(cantidad, precio){
+    precioTotal +=  (cantidad * precio)
 }
-else{
-    alert("Gracias por su visita")
+
+function calculoStock(cantidad, stock, precio){
+    if(cantidad <= stock){
+        calculoPrecio(cantidad, precio)}
+    else{
+    alert("Actualmente tenemos un stock total de " + stock)
+    }
 }
 
-//Clase 2
-/*
-let verdadero = true
-let falso = false
+let cantidadCompra = parseInt(prompt('Qué cantidad de productos distintos quiere comprar?: '))
 
-let numero = prompt("Ingrese un número: ")
 
-if (numero > 5) {
-    console.log("El número es mayor") 
-}
-console.log("Este es el final")
-*/
-/* let text = prompt("ingrese SI para comprar \nIngrese NO para salir")
+for(let i = 0; i  < cantidadCompra; i = i + 1){
 
-if(text == "SI"){
-    alert("Gracias por su respuesta")
-}
-else{
-    alert("Gracias vuelva pronto")
-}
-*/
-/*
-let precio = prompt("ingrese un número:")
+    let productoCompra = prompt("Ingrese que producto quiere comprar: \n- 1.Proteina ENA 1KG\n- 2.Proteina Star 3kg\n- 3.Whey Protein Gentech 5kg\n- 4.Creatina ENA 300Grs\n- 5.Creatina Star 300Grs\n- 6.Creatina Gold Nutrition 300Grs")
 
-if (precio < 20) {
-    alert("El precio es menor que 20");
-}
-else if (precio < 50) {
-    alert("El precio es menor que 50");
-}
-else if (precio < 100) {
-    alert("El precio es menor que 100");
-}
-else {
-    alert("El precio es mayor que 100");
-}
-console.log("Fin")
-*/
+
+    if((productoCompra.toLowerCase() == 'proteina ena 1kg') || (productoCompra == '1') || (productoCompra.toLowerCase() == '1.proteina ena 1kg')){
+        let cantidadProductoA = prompt("ingrese que cantidad de " + productoA.nombre + " desea comprar.")
+        calculoStock(cantidadProductoA, productoA.stock, productoA["precio"])
+        productoA.restarStock(cantidadProductoA)
+    }
+    else if((productoCompra.toLowerCase() == 'proteina star 3kg') || (productoCompra == '2') || (productoCompra.toLowerCase() =='2.proteina start 3kg')){
+     let cantidadProductoB = prompt("ingrese que cantidad de " + productoB.nombre + " desea comprar.")
+     calculoStock(cantidadProductoB, productoB.stock, productoB["precio"])
+     productoB.restarStock(cantidadProductoB)
+    }
+    else if((productoCompra.toLowerCase() == 'whey protein gentech 5kg') || (productoCompra == '3') || (productoCompra.toLowerCase() == '3.whey protein gentech 5kg')){
+     let cantidadProductoC = prompt("ingrese que cantidad de " + productoC.nombre + " desea comprar.")
+     calculoStock(cantidadProductoC, productoC.stock, productoC["precio"])
+     productoC.restarStock(cantidadProductoC)
+    }
+    else if((productoCompra.toLowerCase() == 'creatina ena 300grs') || (productoCompra == '4') || (productoCompra.toLowerCase() == '4.creatina ena 300grs')){
+        let cantidadProductoD = prompt("ingrese que cantidad de " + productoD.nombre + " desea comprar.")
+        calculoStock(cantidadProductoD, productoD.stock, productoD["precio"])
+        productoD.restarStock(cantidadProductoD)
+    }
+    else if((productoCompra.toLowerCase() == 'creatina star 300grs') || (productoCompra == '5') || (productoCompra.toLowerCase() == '5.creatina star 300grs')){
+        let cantidadProductoE = prompt("ingrese que cantidad de " + productoE.nombre + " desea comprar.")
+        calculoStock(cantidadProductoE, productoE.stock, productoE["precio"])
+        productoE.restarStock(cantidadProductoE)
+    }
+    else if((productoCompra.toLowerCase() == 'creatina gold nutrition 300grs') || (productoCompra == '6') || (productoCompra.toLowerCase() == '6.creatina gold nutrition 300grs')){
+        let cantidadProductoF = prompt("ingrese que cantidad de " + productoF.nombre + " desea comprar.")
+        calculoStock(cantidadProductoF, productoF.stock, productoF["precio"])
+        productoF.restarStock(cantidadProductoF)
+    }
+
+    else{
+     alert("No tenemos ese producto a la venta")
+    }
+    }
+    if(precioTotal != 0){
+        alert("El total de su compra será de: " + precioTotal)
+         if(precioTotal >= 210000){
+            alert('Su compra obtendrá un descuento de 30% ya que superó el monto de $210.000\n Su nuevo precio final será ' + precioTotal*0.70)
+         } 
+         else if(precioTotal >= 160000){
+        alert('Su compra obtendrá un descuento de 20% ya que superó el monto de $160.000\n Su nuevo precio final será ' + precioTotal*0.80)
+        } 
+        else if(precioTotal >= 90000){
+            alert('Su compra obtendrá un descuento de 10% ya que superó el monto de $90.000\n Su nuevo precio final será ' + precioTotal*0.90)
+        }
+        else if(precioTotal <12500){
+            alert('Para alcanzar el envío gratis debe alcanzar el monto mínimo de $12.500, su monto actual es ' + precioTotal + '\n El adicional de envío en CABA es de $1.100, su precio total será de: ' + (precioTotal+1100))
+        }
+    }
+    else{
+        alert("Muhcas gracias, vuelva pronto!")
+    }
