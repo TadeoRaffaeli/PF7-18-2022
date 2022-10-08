@@ -1,0 +1,53 @@
+.h11{
+    grid-template-areas: h11;
+}
+.h22{
+    grid-template-areas: h22;
+}
+.h33{
+    grid-template-areas: h33;
+}
+.h44{
+    grid-template-areas: h44;
+}
+.h55{
+    grid-template-areas: h55;
+}
+.h66{
+    grid-template-areas: h66;
+}
+#catalogo{
+    background-color: burlywood;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.card{
+    border: 5px;
+    border-color: black;
+    width: 1fr;
+    background-color: rgb(95, 8, 95);
+    margin-right: 5px;
+    img{
+        margin-left: 20%;
+        height: 80%;
+        width: 60%;
+    }
+    p{
+        margin-left: 20%;
+    }
+    @media (min-width:1024px){
+        #catalogo{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+h4{
+    color: aquamarine;
+}
+
+.nuevaCard{
+    background-color: red;
+    width: 100px;
+    height: 40px;
+}

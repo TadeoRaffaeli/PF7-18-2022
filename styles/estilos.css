@@ -21,13 +21,14 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  grid-area: header;
-  padding: 20px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-areas: "h11" "h22" "h33" "h44" "h55" "h66";
+  flex-wrap: nowrap;
+  padding: 15px;
   text-align: left;
-  word-spacing: 15px;
-  font-size: 25px;
+  word-spacing: 12px;
+  font-size: 22px;
   background-image: linear-gradient(to right, rgb(70, 36, 76), rgb(113, 43, 117), rgb(199, 75, 80), rgb(212, 155, 84));
   color: rgb(85, 82, 147);
 }
@@ -424,12 +425,72 @@ input {
   height: 100%;
 }
 
-@media (min-width: 709px) {
+.h11 {
+  grid-template-areas: h11;
+}
+
+.h22 {
+  grid-template-areas: h22;
+}
+
+.h33 {
+  grid-template-areas: h33;
+}
+
+.h44 {
+  grid-template-areas: h44;
+}
+
+.h55 {
+  grid-template-areas: h55;
+}
+
+.h66 {
+  grid-template-areas: h66;
+}
+
+#catalogo {
+  background-color: burlywood;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card {
+  border: 5px;
+  border-color: black;
+  width: 1fr;
+  background-color: rgb(95, 8, 95);
+  margin-right: 5px;
+}
+.card img {
+  margin-left: 20%;
+  height: 80%;
+  width: 60%;
+}
+.card p {
+  margin-left: 20%;
+}
+@media (min-width: 1024px) {
+  .card #catalogo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+h4 {
+  color: aquamarine;
+}
+
+.nuevaCard {
+  background-color: red;
+  width: 100px;
+  height: 40px;
+}
+
+@media (min-width: 840px) {
   header {
     text-shadow: 5%;
-    justify-content: space-around;
     text-align: left;
-    font: 80px;
+    font: 90px;
   }
   .padre {
     margin-top: 0%;
@@ -441,10 +502,11 @@ input {
     margin-top: 0%;
   }
   .hindex {
-    display: grid;
+    display: flex;
+    flex-wrap: nowrap;
     margin-left: none;
-    grid-template-areas: "div div div div div";
     font: 80px;
+    text-align: left;
   }
   .headerMob {
     display: none;
@@ -482,6 +544,9 @@ input {
   }
 }
 @media (min-width: 1024px) {
+  #catalogo {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   img {
     width: 80%;
   }

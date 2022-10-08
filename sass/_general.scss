@@ -27,13 +27,15 @@ body{
 }
 
 header{
-    display: flex;
-    flex-direction: column;
-    grid-area: header;
-    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "h11" "h22" "h33" "h44" "h55" "h66";
+    flex-wrap: nowrap;
+    padding: 15px;
     text-align: left;
-    word-spacing: 15px;
-    font-size: 25px;
+    word-spacing: 12px;
+    font-size: 22px;
     background-image: linear-gradient(to right,rgb(70, 36, 76), rgb(113, 43, 117),rgb(199, 75, 80),rgb(212, 155, 84)); 
     color: rgb(85, 82, 147);
 }
@@ -138,3 +140,4 @@ footer{
     align-items: center;
     width: 100%;
 }
+

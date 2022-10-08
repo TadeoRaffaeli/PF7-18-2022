@@ -1,11 +1,4 @@
-/*
-let productoA = {
-    nombre: 'Mesa',
-    precio: 100,
-    stock: 10
-} */
-
-    function Producto(nombre, precio, stock){
+function Producto(nombre, precio, stock){
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock;
@@ -14,17 +7,6 @@ let productoA = {
     }
 } 
 
-/* class Producto{
-    constructor(nombre, precio, stock){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-    }
-    restarStock(cantidad){
-        this.stock -= cantidad
-    }
-}  */
-
 let productoA = new Producto('Proteina ENA 1KG', 5500, 150)
 let productoB = new Producto("Proteina Star 3kg", 15200, 60)
 let productoC = new Producto("Whey Protein Gentech 5kgs", 24000, 20)
@@ -32,15 +14,34 @@ let productoD = new Producto("Creatina ENA 300Grs", 7200, 30)
 let productoE = new Producto("Creatina Star 300Grs", 10000, 20)
 let productoF = new Producto("Creatina Gold Nutrition 300Grs", 7000, 80)
 
+let listaProductos = [productoA, productoB, productoC, productoD, productoE, productoF]
+
+let listaProductosConStock = listaProductos.filter((prod) => prod.stock > 0)
+
+let listaNombres = listaProductosConStock.map((prod) => prod.nombre)
+
+/* listaProductos.length() */
+
+/* let listaNombres = [] */
+/* 
+for(const prod of listaProductos){
+    if(prod.stock > 0){
+        listaNombres.push(prod.nombre)
+    }
+} */
+
+listaNombres = ["Proteina ENA 1KG", "Proteina Star 3kg", "Whey Protein Gentech 5kgs", "Creatina ENA 300Grs", "Creatina Star 300Grs", "Creatina Gold Nutrition 300Grs"]
+
+alert('Estos son nuestros productos: \n - ' + listaNombres.join("\n - "))
 
 /* for(const propiedad in productoA){
     console.log(productoA[propiedad])
 } */
 
-let precioTotal = 0
- alert('Estos son nuestros prefuctos en stock: \n- 1.Proteina ENA 1KG\n- 2.Proteina Star 3kg\n- 3.Whey Protein Gentech 5kg\n- 4.Creatina ENA 300Grs\n- 5.Creatina Star 300Grs\n- 6.Creatina Gold Nutrition 300Grs"') 
+/* let precioTotal = 0
+ alert('Estos son nuestros prefuctos en stock: \n- 1.Proteina ENA 1KG\n- 2.Proteina Star 3kg\n- 3.Whey Protein Gentech 5kg\n- 4.Creatina ENA 300Grs\n- 5.Creatina Star 300Grs\n- 6.Creatina Gold Nutrition 300Grs"')  */
 
-
+ let precioTotal = 0
 function calculoPrecio(cantidad, precio){
     precioTotal +=  (cantidad * precio)
 }

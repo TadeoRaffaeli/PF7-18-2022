@@ -4,17 +4,16 @@
 @import "alimentacion";
 @import "contacto";
 @import "index";
+@import "productos";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-@media (min-width:709px){
-   
+@media (min-width:840px){
    header{
         text-shadow: 5%;
-        justify-content: space-around;
         text-align: left;
-        font: 80px;
+        font: 90px;
      }
    .padre{
       margin-top: 0%;
@@ -26,11 +25,11 @@
       margin-top: 0%;
    }
      .hindex{
-        display: grid;
+        display: flex;
+        flex-wrap: nowrap;
         margin-left: none;
-        grid-template-areas: 
-        "div div div div div";
         font: 80px;
+        text-align: left;
      }
      .headerMob{
         display: none;
@@ -68,7 +67,9 @@
      }
 }
 @media (min-width:1024px){
-    
+   #catalogo{
+      grid-template-columns: 1fr 1fr 1fr;
+  }
     img{
         width: 80%
     }
