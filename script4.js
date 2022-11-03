@@ -1,4 +1,4 @@
-/*  const listaDeProductos = [
+ const listaDeProductos = [
     {
         id: 1,
         nombre: "Proteina ENA 1KG",
@@ -47,12 +47,9 @@
         img: "../Images/CreatinaGoldNutrition300Grs.jpg",
         cat: "creatina"
     }
-]  */
-// intentando aplicar el JSON de productos.json pero no me lo toma.
+]
 
-let listaDeProductos = JSON.parse(localStorage.getAttribute([]))
-
-fetch('productos.json')
+fetch('https://api-dolar-argentina.herokuapp.com/api/contadoliqui')
 .then((response) => response.json())
 .then ((info) => render(info) )
 
