@@ -505,14 +505,11 @@ input {
 .card {
   border: 5px;
   border-color: black;
-  width: 1fr;
-  height: 1fr;
+  width: 80%;
+  height: 80%;
   background-color: rgb(95, 8, 95);
   margin-right: 10%;
-  margin-bottom: 62%;
-}
-.card p {
-  margin-left: 20%;
+  margin-bottom: 10%;
 }
 @media (min-width: 1024px) {
   .card #catalogo {
@@ -530,11 +527,8 @@ input {
   border-color: black;
   width: 1fr;
   margin-right: 5px;
-}
-.card-img img {
-  margin-left: 20%;
   height: 40%;
-  width: 30%;
+  width: 80%;
 }
 .card-img p {
   margin-left: 20%;

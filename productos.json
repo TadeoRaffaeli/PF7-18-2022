@@ -1,0 +1,50 @@
+ [
+    {
+        "id": 1,
+        "name": "Proteina ENA 1KG",
+        "price": 5500,
+        "stock": 150,
+        "image": "../Images/ProteinaENA1KG.jpg",
+        "cat": "proteina"
+    },
+    {
+        "id": 2,
+        "name": "Proteina Star 3kg",
+        "price": 15200,
+        "stock": 60,
+        "image": "../Images/ProteinaStar3kg.jpg",
+        "cat": "proteina"
+    },
+    {
+        "id": 3,
+        "name": "Whey Protein Gentech 5kgs",
+        "price": 24000,
+        "stock": 20,
+        "image": "../Images/WheyProteinGentech5kgs.jpg",
+        "cat": "proteina"
+    },
+    {
+        "id": 4,
+        "name": "Creatina ENA 300Grs",
+        "price": 7200,
+        "stock": 30,
+        "image": "../Images/CreatinaENA300Grs.jpg",
+        "cat": "creatina"
+    },
+    {
+        "id": 5,
+        "name": "Creatina Star 300Grs",
+        "price": 10000,
+        "stock": 20,
+        "image": "../Images/CreatinaStar300Grs.jpg",
+        "cat": "creatina"
+    },
+    {
+        "id": 6,
+        "name": "Creatina Gold Nutrition 300Grs",
+        "price": 7000,
+        "stock": 80,
+        "image": "../Images/CreatinaGoldNutrition300Grs.jpg",
+        "cat": "creatina"
+    }
+]

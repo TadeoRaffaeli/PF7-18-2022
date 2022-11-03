@@ -1,4 +1,4 @@
-const listaDeProductos = [
+/*  const listaDeProductos = [
     {
         id: 1,
         nombre: "Proteina ENA 1KG",
@@ -47,7 +47,16 @@ const listaDeProductos = [
         img: "../Images/CreatinaGoldNutrition300Grs.jpg",
         cat: "creatina"
     }
-]
+]  */
+// intentando aplicar el JSON de productos.json pero no me lo toma.
+
+let listaDeProductos = JSON.parse(localStorage.getAttribute([]))
+
+fetch('productos.json')
+.then((response) => response.json())
+.then ((info) => render(info) )
+
+
 
 let catalog = document.getElementById('items')
 let cartList = document.getElementById('carrito')
@@ -55,14 +64,20 @@ let buttonEmpty = document.getElementById('boton-vaciar')
 let totalValue = document.getElementById('total')
 let totalEnvio = document.getElementById('envio')
 let cart = []
+let inputFilter = document.getElementById('filtro')
+inputFilter.addEventListener('input', (e) => renderProducts(e.target.value))
 
 buttonEmpty.addEventListener('click', emptyButtonHandler)
 
 loadCartFromStorage()
 renderCart()
+window.onload = () => renderProducts('')
 
+function renderProducts(filter = ''){
+    catalog.innerHTML = ''
+    const array = filter === '' ? listaDeProductos : listaDeProductos.filter( item => item.nombre.toLowerCase().includes(filter.toLowerCase()))
 
-listaDeProductos.forEach((prod) => {
+    array.forEach((prod) => {
     let container = document.createElement('div')
     container.classList.add('card', 'col-sm-4')
     //Body
@@ -83,7 +98,7 @@ listaDeProductos.forEach((prod) => {
     //Img
     let cardImg = document.createElement("img")
     cardImg.classList.add('card-img')
-    cardImg.innerHTML = `<img src=${prod.img}></img>`
+    cardImg.src = `${prod.img}`
     //Button
     let cardButton = document.createElement("button")
     cardButton.classList.add('btn', 'btn-primary')
@@ -100,6 +115,7 @@ listaDeProductos.forEach((prod) => {
     catalog.append(container)
 })
 
+} 
 function addProdToCart(event){
     cart.push(event.target.getAttribute('mark'))
     renderCart()

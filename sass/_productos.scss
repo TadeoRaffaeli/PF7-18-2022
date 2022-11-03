@@ -60,15 +60,12 @@
 .card{
     border: 5px;
     border-color: black;
-    width: 1fr;
-    height: 1fr;
+    width: 80%;
+    height: 80%;
     background-color: rgb(95, 8, 95);
     margin-right: 10%;
-    margin-bottom: 62%;
+    margin-bottom: 10%;
     
-    p{
-        margin-left: 20%;
-    }
     @media (min-width:1024px){
         #catalogo{
             grid-template-columns: 1fr 1fr;
@@ -85,11 +82,9 @@
     border-color: black;
     width: 1fr;
     margin-right: 5px;
-    img{
-        margin-left: 20%;
-        height: 40%;
-        width: 30%;
-    }
+    height: 40%;
+    width: 80%;
+    
     p{
         margin-left: 20%;
     }
