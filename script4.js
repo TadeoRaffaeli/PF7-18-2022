@@ -1,58 +1,23 @@
- const listaDeProductos = [
-    {
-        id: 1,
-        nombre: "Proteina ENA 1KG",
-        precio: 5500,
-        stock: 150,
-        img: "../Images/ProteinaENA1KG.jpg",
-        cat: "proteina"
-    },
-    {
-        id: 2,
-        nombre: "Proteina Star 3kg",
-        precio: 15200,
-        stock: 60,
-        img: "../Images/ProteinaStar3kg.jpg",
-        cat: "proteina"
-    },
-    {
-        id: 3,
-        nombre: "Whey Protein Gentech 5kgs",
-        precio: 24000,
-        stock: 20,
-        img: "../Images/WheyProteinGentech5kgs.jpg",
-        cat: "proteina"
-    },
-    {
-        id: 4,
-        nombre: "Creatina ENA 300Grs",
-        precio: 7200,
-        stock: 30,
-        img: "../Images/CreatinaENA300Grs.jpg",
-        cat: "creatina"
-    },
-    {
-        id: 5,
-        nombre: "Creatina Star 300Grs",
-        precio: 10000,
-        stock: 20,
-        img: "../Images/CreatinaStar300Grs.jpg",
-        cat: "creatina"
-    },
-    {
-        id: 6,
-        nombre: "Creatina Gold Nutrition 300Grs",
-        precio: 7000,
-        stock: 80,
-        img: "../Images/CreatinaGoldNutrition300Grs.jpg",
-        cat: "creatina"
-    }
-]
+import products from "./productos.json" assert{type:'json'}
 
-fetch('https://api-dolar-argentina.herokuapp.com/api/contadoliqui')
-.then((response) => response.json())
-.then ((info) => render(info) )
+let listaDeProductos = products.data
 
+
+let api = ()=> {
+fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+.then((response) =>response.json())
+.then((dolarValue) => precioNuevo(parseFloat(dolarValue[3].casa.venta.replace(',','.'))))
+.then ((info) => renderProducts(info))
+}
+
+
+let precioNuevo = (precioDolar) => {
+    listaDeProductos = listaDeProductos.map((producto) => {
+    const precioViejo = producto.precio
+    return{... producto,"precio": precioViejo * precioDolar}
+})
+return listaDeProductos
+}
 
 
 let catalog = document.getElementById('items')
@@ -62,17 +27,17 @@ let totalValue = document.getElementById('total')
 let totalEnvio = document.getElementById('envio')
 let cart = []
 let inputFilter = document.getElementById('filtro')
-inputFilter.addEventListener('input', (e) => renderProducts(e.target.value))
+inputFilter.addEventListener('input', (e) => renderProducts(listaDeProductos, e.target.value))
 
-buttonEmpty.addEventListener('click', emptyButtonHandler)
+
 
 loadCartFromStorage()
 renderCart()
-window.onload = () => renderProducts('')
+window.onload = () => api()
 
-function renderProducts(filter = ''){
+function renderProducts(listaDeProductos, filter = ''){
     catalog.innerHTML = ''
-    const array = filter === '' ? listaDeProductos : listaDeProductos.filter( item => item.nombre.toLowerCase().includes(filter.toLowerCase()))
+    const array = filter === '' ? listaDeProductos : listaDeProductos.filter( item => item.cat.toLowerCase().includes(filter.toLowerCase()))
 
     array.forEach((prod) => {
     let container = document.createElement('div')
@@ -87,7 +52,7 @@ function renderProducts(filter = ''){
     //Precio
     let cardPrice = document.createElement("p")
     cardPrice.classList.add('card-text')
-    cardPrice.innerText = `$${prod.precio}`
+    cardPrice.innerText = `$${prod.precio.toFixed(2)}`
     //Stock
     let cardStock = document.createElement("p")
     cardStock.classList.add('card-text')
@@ -137,20 +102,21 @@ function renderCart(){
 
     let linea = document.createElement('li')
     linea.classList.add('list-group-item', 'text-right', 'mx-2')
-    linea.innerText = `${quantity} x ${item[0].nombre} - $${item[0].precio}`
+    linea.innerText = `${quantity} x ${item[0].nombre} - $${item[0].precio.toFixed(2)}`
 
     let buttonDelete = document.createElement('button')
     buttonDelete.classList.add('btn', 'btn-danger', 'mx-5')
     buttonDelete.innerText = 'X'
     buttonDelete.dataset.item = itemId
     buttonDelete.addEventListener('click', deleteProduct)
+    
 
     linea.append(buttonDelete)
     cartList.append(linea)
     })
 
-    totalValue.innerText = calculateTotalPrice()
-    totalEnvio.innerText = 1500
+    totalValue.innerText = "$" + calculateTotalPrice().toFixed(2)
+    totalEnvio.innerText = envioC()
 }
 
 function deleteProduct(event){
@@ -179,7 +145,9 @@ function deleteProduct(event){
 function emptyButtonHandler(){
     cart = []
     cartList.innerHTML = ''
-    totalValue.innerText = 0
+    totalValue.innerText = "$0"
+    totalEnvio.innerText = "$0"
+    saveCartToStorage()
 }
 
 function calculateTotalPrice(){
@@ -188,8 +156,21 @@ function calculateTotalPrice(){
             return producto.id === parseInt(itemId)
         })
         return total + item[0].precio
-     }, 0)   
+     }, 0) 
        
+}
+function envioC(){
+    if(calculateTotalPrice() != 0){
+    if(calculateTotalPrice() <= 50000){
+        return "$1500"
+    }
+    else if(calculateTotalPrice() > 50000){
+        return "Envío Gratis"
+    }
+}
+else{
+    return "$0"
+}
 }
 
 
@@ -204,3 +185,4 @@ function loadCartFromStorage(){
     }
 }
 
+buttonEmpty.addEventListener('click', emptyButtonHandler)

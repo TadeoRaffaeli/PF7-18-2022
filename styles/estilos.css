@@ -458,9 +458,19 @@ input {
 .col-sm-8 {
   width: 75%;
 }
+@media (min-width: 1220px) {
+  .col-sm-8 {
+    width: 65%;
+  }
+}
 
 .col-sm-4 {
   width: 25%;
+}
+@media (min-width: 1220px) {
+  .col-sm-4 {
+    width: 35%;
+  }
 }
 
 #items {
@@ -503,10 +513,10 @@ input {
 }
 
 .card {
-  border: 5px;
-  border-color: black;
-  width: 80%;
-  height: 80%;
+  border: 5px solid;
+  border-color: whitesmoke;
+  width: 95%;
+  height: 95%;
   background-color: rgb(95, 8, 95);
   margin-right: 10%;
   margin-bottom: 10%;
@@ -520,6 +530,8 @@ input {
 .card-body {
   height: 1fr;
   width: 1fr;
+  border: 5px;
+  border-color: whitesmoke;
 }
 
 .card-img {
@@ -552,8 +564,6 @@ input {
 
 .card {
   display: grid;
-  height: 100%;
-  width: 100%;
 }
 
 .card-title {
@@ -572,6 +582,25 @@ h4 {
   background-color: red;
   width: 100px;
   height: 40px;
+}
+
+.text-right {
+  background-color: pink;
+  color: black;
+  border: 5px solid whitesmoke;
+}
+
+#filtro {
+  height: 10%;
+  width: 50%;
+}
+
+.conteiner {
+  width: 100%;
+}
+
+.mainProductos {
+  width: 90%;
 }
 
 @media (min-width: 840px) {

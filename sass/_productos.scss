@@ -22,10 +22,16 @@
     grid-template-columns: 1fr 1fr;
 }
 .col-sm-8{
-    width: 75%
+    width: 75%;
+    @media( min-width: 1220px){
+        width: 65%
+    }
 }
 .col-sm-4{
     width: 25%;
+    @media( min-width: 1220px){
+        width: 35%
+    }
 }
 #items{
     grid-area: items;
@@ -58,10 +64,10 @@
 }
 }
 .card{
-    border: 5px;
-    border-color: black;
-    width: 80%;
-    height: 80%;
+    border: 5px solid;
+    border-color: whitesmoke;
+    width: 95%;
+    height: 95%;
     background-color: rgb(95, 8, 95);
     margin-right: 10%;
     margin-bottom: 10%;
@@ -75,6 +81,8 @@
 .card-body{
     height: 1fr;
     width: 1fr;
+    border: 5px;
+    border-color:whitesmoke;
 
 }
 .card-img{
@@ -105,8 +113,6 @@
 }
 .card{
     display: grid;
-    height: 100%;
-    width: 100%;
 }
 .card-title{
     color: whitesmoke;
@@ -123,4 +129,19 @@ h4{
     background-color: red;
     width: 100px;
     height: 40px;
+}
+.text-right{
+    background-color: pink;
+    color: black;
+    border: 5px solid whitesmoke;
+}
+#filtro{
+    height: 10%;
+    width: 50%;
+}
+.conteiner{
+    width: 100%
+}
+.mainProductos{
+    width: 90%
 }
